@@ -1,11 +1,14 @@
 import Footer from "../components/Footer";
 import Header from "../components/Header";
-import ProductList from "../components/ProductList";
+import HeroSection from "../components/HeroSection";
+import MainSection from "../components/MainSection";
+import ProductList from "../components/ProductCard";
 
 function Home() {
   return (
     <div>
-      <ProductList />
+      <HeroSection />
+      <MainSection />
       <Footer />
     </div>
   );
