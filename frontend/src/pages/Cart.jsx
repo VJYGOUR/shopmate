@@ -1,5 +1,14 @@
+import CartList from "../components/CartList";
+import Summary from "../components/Summary";
+
 function Cart() {
-  return <div>cart</div>;
+  return (
+    <div>
+      <CartList />
+
+      <Summary />
+    </div>
+  );
 }
 
 export default Cart;

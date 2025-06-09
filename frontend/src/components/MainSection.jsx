@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import useStore from "../lib/store";
 
 const products = [
   {
@@ -38,6 +39,7 @@ const cardVariants = {
 };
 
 const MainSection = () => {
+  const { addToCart } = useStore();
   return (
     <section className="bg-gray-900 py-16 px-6 md:px-20 text-white">
       <h2 className="text-3xl font-semibold text-center mb-12 text-blue-400">
@@ -69,6 +71,7 @@ const MainSection = () => {
             <button
               className="mt-5 w-full bg-blue-600 hover:bg-blue-700 transition py-3 rounded text-white font-semibold shadow-lg"
               aria-label={`Add ${product.name} to cart`}
+              onClick={() => addToCart(product)}
             >
               Add to Cart
             </button>
