@@ -1,31 +1,35 @@
 import React from "react";
 import { motion } from "framer-motion";
 import useStore from "../lib/store";
+import watch from "../assets/download.jpeg";
+import earphone from "../assets/download (1).jpeg";
+import gamingMouse from "../assets/gamingmouse.jpeg";
+import blSpeaker from "../assets/blspeaker.jpeg";
 
 const products = [
   {
     id: 1,
     name: "Wireless Headphones",
-    price: "₹1,999",
-    image: "https://via.placeholder.com/300x200?text=Product+1",
+    price: 1999,
+    image: watch,
   },
   {
     id: 2,
     name: "Smart Watch",
-    price: "₹2,499",
-    image: "https://via.placeholder.com/300x200?text=Product+2",
+    price: 2499,
+    image: earphone,
   },
   {
     id: 3,
     name: "Gaming Mouse",
-    price: "₹799",
-    image: "https://via.placeholder.com/300x200?text=Product+3",
+    price: 799,
+    image: gamingMouse,
   },
   {
     id: 4,
     name: "Bluetooth Speaker",
-    price: "₹1,299",
-    image: "https://via.placeholder.com/300x200?text=Product+4",
+    price: 1299,
+    image: blSpeaker,
   },
 ];
 

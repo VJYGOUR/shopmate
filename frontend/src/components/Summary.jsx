@@ -6,7 +6,8 @@ function Summary() {
     return acc + curr.qty;
   }, 0);
   return (
-    <div>
+    <div className="absolute top-10 right-6">
+      <h1>summary</h1>
       <span>Total ITEMS:{totalqty}</span>
     </div>
   );

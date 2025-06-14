@@ -3,7 +3,9 @@ import Summary from "../components/Summary";
 
 function Cart() {
   return (
-    <div>
+    <div className="relative">
+      <h1 className="text-3xl tracking-[2px]">My shopping bag</h1>
+
       <CartList />
 
       <Summary />
