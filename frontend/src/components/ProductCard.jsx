@@ -6,22 +6,29 @@ const ProductCard = ({ product }) => {
     <motion.div
       whileHover={{
         scale: 1.05,
-        boxShadow: "0 10px 20px rgba(59, 130, 246, 0.6)",
+        boxShadow: "0 0 25px rgba(59, 130, 246, 0.5)",
       }}
-      transition={{ type: "spring", stiffness: 300 }}
-      className="bg-gray-800 shadow-md rounded p-4 cursor-pointer text-white"
+      transition={{ type: "spring", stiffness: 300, damping: 20 }}
+      className="bg-gray-900 rounded-2xl shadow-lg p-4 cursor-pointer transition-all duration-300"
     >
-      <img
-        src={product.image}
-        alt={product.title || "Product image"}
-        className="w-full h-48 object-cover rounded mb-3"
-      />
-      <h3 className="text-lg font-semibold text-gray-100">{product.title}</h3>
-      <p className="text-blue-400 font-bold">{product.price}</p>
+      <div className="overflow-hidden rounded-xl">
+        <img
+          src={product.image}
+          alt={product.title || "Product image"}
+          className="w-full h-48 object-cover transform hover:scale-105 transition-transform duration-300 rounded-xl"
+        />
+      </div>
+
+      <h3 className="mt-4 text-lg font-semibold text-white tracking-wide">
+        {product.title}
+      </h3>
+
+      <p className="text-blue-400 font-bold text-lg mt-1">₹{product.price}</p>
+
       <a
         href={`/product/${product.id}`}
         aria-label={`View details for ${product.title}`}
-        className="inline-block mt-3 text-sm bg-blue-600 px-4 py-2 rounded hover:bg-blue-700 transition text-white"
+        className="inline-block mt-4 text-sm font-semibold px-5 py-2 rounded-full bg-blue-600 hover:bg-blue-700 text-white transition duration-300 shadow-md"
       >
         View Details
       </a>

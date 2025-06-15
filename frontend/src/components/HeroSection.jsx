@@ -2,40 +2,50 @@ import { motion } from "framer-motion";
 
 const HeroSection = () => {
   return (
-    <section className="relative bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 py-20 px-6 md:px-20 text-center text-white overflow-hidden">
-      {/* Animated Gradient Background (blurred circles) */}
+    <section className="relative bg-gradient-to-r from-[#0f0c29] via-[#302b63] to-[#24243e] py-20 px-6 md:px-16 text-center text-white overflow-hidden">
+      {/* Floating Blobs */}
       <motion.div
         animate={{ rotate: 360 }}
         transition={{ repeat: Infinity, duration: 60, ease: "linear" }}
-        className="absolute -top-40 -left-40 w-96 h-96 bg-blue-700 opacity-30 rounded-full filter blur-3xl mix-blend-multiply"
+        className="absolute -top-48 -left-48 w-[28rem] h-[28rem] bg-fuchsia-600 opacity-30 rounded-full filter blur-3xl mix-blend-multiply"
       />
       <motion.div
         animate={{ rotate: -360 }}
-        transition={{ repeat: Infinity, duration: 90, ease: "linear" }}
-        className="absolute -bottom-40 -right-40 w-96 h-96 bg-purple-700 opacity-30 rounded-full filter blur-3xl mix-blend-multiply"
+        transition={{ repeat: Infinity, duration: 80, ease: "linear" }}
+        className="absolute -bottom-48 -right-48 w-[28rem] h-[28rem] bg-blue-600 opacity-30 rounded-full filter blur-3xl mix-blend-multiply"
       />
 
+      {/* Content */}
       <motion.div
-        initial={{ opacity: 0, y: 40 }}
+        initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, ease: "easeOut" }}
-        className="relative max-w-4xl mx-auto"
+        className="relative z-10 max-w-4xl mx-auto"
       >
-        <h1 className="text-4xl md:text-6xl font-extrabold leading-tight mb-6 drop-shadow-lg">
-          Discover Quality Products at{" "}
-          <span className="text-blue-400">Unbeatable Prices</span>
+        <h1 className="text-4xl md:text-6xl font-extrabold leading-tight mb-6 tracking-tight">
+          <span className="bg-gradient-to-r from-blue-400 via-purple-500 to-fuchsia-400 text-transparent bg-clip-text animate-text-glow">
+            Discover Unique Finds&nbsp;
+          </span>
+          at <span className="text-blue-500">Unbeatable Prices</span>
         </h1>
-        <p className="text-xl md:text-2xl mb-10 text-gray-300 max-w-3xl mx-auto drop-shadow-sm">
-          Shop our curated collection of must-have items for every lifestyle.
+
+        <p className="text-xl md:text-2xl text-gray-300 mb-10 max-w-2xl mx-auto">
+          Elevate your style with curated picks from our best-selling
+          collections.
         </p>
-        <motion.a
-          href="/shop"
-          whileHover={{ scale: 1.05, backgroundColor: "#2563eb" }}
-          whileTap={{ scale: 0.95 }}
-          className="inline-block bg-blue-600 text-white px-8 py-4 rounded-full font-semibold shadow-lg shadow-blue-700/50 transition-colors duration-300"
+
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ delay: 0.6, duration: 0.6 }}
         >
-          Shop Now
-        </motion.a>
+          <a
+            href="/products"
+            className="inline-block bg-blue-600 hover:bg-blue-700 px-8 py-4 rounded-full text-white font-bold text-lg shadow-xl hover:shadow-blue-700/40 transition-all duration-300"
+          >
+            🚀 Start Shopping
+          </a>
+        </motion.div>
       </motion.div>
     </section>
   );
