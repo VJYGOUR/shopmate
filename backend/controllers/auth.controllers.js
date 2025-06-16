@@ -17,12 +17,14 @@ export const login = async (req, res) => {
     const user = await User.findOne({ email });
     //if exist
     if (!user) {
-      return res.status(400).json({ mssg: "no user found" });
+      return res.status(400).json({ success: false, message: "no user found" });
     }
     // 2. compare password
     const isMatch = await bcrypt.compare(password, user.password);
     if (!isMatch)
-      return res.status(400).json({ mssg: "password is not correct" });
+      return res
+        .status(400)
+        .json({ success: false, message: "password is not correct" });
 
     //3. Create jwt token
     const payload = {
@@ -37,7 +39,7 @@ export const login = async (req, res) => {
       secure: process.env.NODE_ENV === "production",
       maxAge: 60 * 60 * 1000,
     });
-    res.json({ message: "Login successful" });
+    res.json({ success: true, message: "Login successful", name: user.name });
   } catch (error) {
     console.error(error);
     res.status(500).send(error.message);

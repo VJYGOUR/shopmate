@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
-
-const HeroSection = () => {
+const HeroSection = ({ userName }) => {
   return (
     <section className="relative bg-gradient-to-r from-[#0f0c29] via-[#302b63] to-[#24243e] py-20 px-6 md:px-16 text-center text-white overflow-hidden">
       {/* Floating Blobs */}
@@ -22,6 +21,17 @@ const HeroSection = () => {
         transition={{ duration: 1, ease: "easeOut" }}
         className="relative z-10 max-w-4xl mx-auto"
       >
+        {/* 👇 Add this welcome line conditionally */}
+        {userName && (
+          <h2 className="text-2xl md:text-3xl font-medium mb-4 text-blue-300">
+            Welcome,{" "}
+            <span className="font-bold text-amber-300 text-6xl">
+              {userName}
+            </span>
+            👋
+          </h2>
+        )}
+
         <h1 className="text-4xl md:text-6xl font-extrabold leading-tight mb-6 tracking-tight">
           <span className="bg-gradient-to-r from-blue-400 via-purple-500 to-fuchsia-400 text-transparent bg-clip-text animate-text-glow">
             Discover Unique Finds&nbsp;
@@ -50,5 +60,4 @@ const HeroSection = () => {
     </section>
   );
 };
-
 export default HeroSection;
