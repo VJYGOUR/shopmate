@@ -2,10 +2,11 @@ import useCartStore from "../lib/store";
 
 function Summary() {
   const { cartArr } = useCartStore();
-  const totalqty = cartArr.reduce((acc, curr) => {
-    return acc + curr.price;
+
+  const subTotal = cartArr.reduce((acc, curr) => {
+    return acc + curr.qty * curr.price;
   }, 0);
-  const items = ["SUBTOTAL", totalqty, "shipping", "tbd", "sales tax", "tbd"];
+  const items = ["SUBTOTAL", subTotal, "shipping", "tbd", "sales tax", "tbd"];
 
   return (
     <div className="block md:absolute md:top-10 md:h-[80vh] md:right-6 md:bg-gray-300 md:w-[30%] md:px-4">

@@ -5,7 +5,6 @@ import Cart from "./pages/Cart";
 import Login from "./pages/Login";
 import Admin from "./pages/Admin";
 import Header from "./components/Header";
-import ProductDetailsPage from "./pages/ProductDetailsPage";
 
 import ProductsListingPage from "./pages/ProductListingPage";
 import Signup from "./pages/Signup";
@@ -17,7 +16,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/products" element={<ProductsListingPage />} />
-        <Route path="/product" element={<ProductDetailsPage />} />
+
         <Route path="/cart" element={<Cart />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
